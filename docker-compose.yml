@@ -1,7 +1,7 @@
 version: "3"
 services:
   mongo:
-    image: tusuarioDocker/p2gps:db
+    image: raulat99/p2gps:db
     deploy:
       replicas: 1
       resources:
@@ -16,7 +16,7 @@ services:
       volumes:
         - "db-data:/data/db"
   order:
-    image: tusuarioDocker/p2gps:order
+    image: raulat99/p2gps:order
     depends_on:
       - "mongo"
     deploy:
@@ -30,7 +30,7 @@ services:
       ports:
         - "8080:8080"
   web:
-    image: tusuarioDocker/p2gps:web
+    image: raulat99/p2gps:web
     deploy:
       replicas: 1
       resources:
